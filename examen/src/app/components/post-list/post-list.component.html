@@ -1,1 +1,13 @@
-<p>post-list works!</p>
+
+<h2>Lista de Posts </h2>
+<a routerLink="/posts/create">Crear nuevo post</a>
+<ul>
+  <li *ngFor="let post of posts$ | async">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+    <a [routerLink]="['/posts', post.id]">Ver detalle</a> |
+    <a [routerLink]="['/posts/edit', post.id]">Editar</a> |
+    <button (click)="deletePost(post.id!)">Eliminar</button>
+
+  </li>
+</ul>

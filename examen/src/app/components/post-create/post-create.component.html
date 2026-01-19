@@ -1,1 +1,15 @@
-<p>post-create works!</p>
+
+<h2>Crear nuevo Post</h2>
+<form (ngSubmit)="createPost()">
+  <div>
+    <label>Título:</label>
+    <input [(ngModel)]="post.title" name="title" required>
+  </div>
+  <div>
+    <label>Contenido:</label>
+    <textarea [(ngModel)]="post.body" name="body" required></textarea>
+  </div>
+  <button type="submit">Guardar</button>
+</form>
+<a routerLink="/posts">Cancelar</a>
+

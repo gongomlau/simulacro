@@ -1,1 +1,16 @@
-<p>post-cedit works!</p>
+
+<h2>Editar Post</h2>
+<form (ngSubmit)="updatePost()">
+  <div>
+    <label>Título:</label>
+    <input [(ngModel)]="post.title" name="title" required>
+  </div>
+  <div>
+    <label>Contenido:</label>
+    <textarea [(ngModel)]="post.body" name="body" required></textarea>
+  </div>
+  <button type="submit">Actualizar</button>
+</form>
+<a routerLink="/posts">Cancelar</a>
+
+
